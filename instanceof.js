@@ -3,12 +3,12 @@
 function identifica(param){
 	
 	console.log (typeof Param);
-	console.log (param instanceof Persona);
+	console.log (param instanceof Person );
 }
 function Person(){
 	this.nombre = 'Raul';
 	this.edad = 35;
 }
 
-var raul = new Persona();
+var raul = new Person();
 identifica(raul);
