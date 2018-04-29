@@ -2,7 +2,7 @@
 
 function identifica(param){
 	
-	console.log (typeof Param);
+	console.log (typeof param);
 	console.log (param instanceof Person );
 }
 function Person(){
