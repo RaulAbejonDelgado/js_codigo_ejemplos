@@ -1,1 +1,1 @@
-README
+Ejercicios practicados en javascript
