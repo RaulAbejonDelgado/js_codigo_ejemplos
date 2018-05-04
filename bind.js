@@ -16,7 +16,7 @@ console.log( bicicleta.imprimirBici());
 
 
 var logBicicleta = function(arg1,arg2){
-	console.log('carro: ', this.imprimirBici());
+	console.log('Bici: ', this.imprimirBici());
 	console.log('Argumentos: ',  arg1,arg2);
 
 }
