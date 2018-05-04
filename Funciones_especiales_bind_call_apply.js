@@ -12,12 +12,18 @@ var bicicleta = {
 
 }
 
+var monoBici = {
+	color:'rojo',
+	marca:'toyota'
+}
+
 console.log( bicicleta.imprimirBici());
 
 
 var logBicicleta = function(arg1,arg2){
 	console.log('Bici: ', this.imprimirBici());
 	console.log('Argumentos: ',  arg1,arg2);
+	console.log('=============================');
 
 }
 //con el logBicicleta.bind ( bicicleta) estoy diciendole que en vez de usar this.imprimirBici() 
@@ -27,4 +33,11 @@ var logModeloBicicleta = logBicicleta.bind ( bicicleta);
 logModeloBicicleta();
 logModeloBicicleta('xxx','xda');
 
-//call
+//call primer parametro a lo que apunta el this, depues irian los posibles parametros opcionales
+logModeloBicicleta.call(bicicleta, 'asd','qwerty');
+
+//Diferencia entre call y apply  el objeto que sustituye a this mas una lista con los parametros opcionales
+logModeloBicicleta.apply(bicicleta, ['qwerty','asd']);
+//funciones prestadas
+var feed =bicicleta.imprimirBici.call(monoBici);
+console.log(feed);
