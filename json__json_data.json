@@ -1,0 +1,16 @@
+//El itercambio de informacion con json ocupa menos espacion que el xml
+//json objetos tiene la siguiente estructura {"clave";valor,}
+//json array [valor1],
+//formato json
+//con htmlcompressor.com/compressor nos permite aligerar aun mas el archivo 
+{
+	"catalog":
+			[{
+				"author":"Raul",
+				"tittle":"Raul 2018",
+				"genre":"Fiction",
+				"price":44.95,
+				"publish_date":"08-10-2017",
+				"description":"Erase una vez..",
+			}]
+}

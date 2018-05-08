@@ -1,0 +1,16 @@
+//El itercambio de informacion con xml tiene la problematica de que las propias etiquetas pueden ocopuar tanto o mas que la informacion relevante
+//json objetos tiene la siguiente estructura {"clave";valor,}
+//json array [valor1],
+//con htmlcompressor.com/compressor
+//info en xml
+<xml version="1-0"?>
+	<catalog>
+		<book id="bk101"
+			<author>Raul</author>
+			<tittle>Raul 2018</tittle>
+			<genre>Fiction</genre>
+			<price>44.95</price>
+			<publish_date>08-10-2017</publish_date>
+			<description>Erase una vez..</description>
+		</book>
+	</catalog>
