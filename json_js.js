@@ -3,7 +3,7 @@ var objetoJS = {
 	nombre:"fernando",
 	edad: 30,
 	impr: function(){
-		console-log(this.nombre , +" "+ ,this.edad);
+		console-log(this.nombre  +" "+ this.edad);
 
 	}
 };
