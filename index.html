@@ -3,6 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Javascript</title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
 	</head>
 	<body>
 		
@@ -47,5 +54,27 @@
 		<script src="for_for_in.js"></script>
 		<script src="rotulacion_ciclos.js"></script>
 		<script src="funciones_tiempo.js"></script>
+		
+		<!--No es recomendable usar asi los eventos mejor desde js-->
+		<button onclick="evento()"> soy un botn</button>
+		<button ondblclick="evento()">boton doble click</button>
+		<input type="text" onfocus="evento()"/>
+		<p>
+			<div onclick="evento()">
+				<span>Click here and watch the console</span>
+			</div>
+		</p>
+		<!--Cuando quitamos el foco-->
+		<input type="text" onblur="evento()"/>
+		<br>
+		<button id="cajaText">AccionJS</button>
+		<script src="eventos_1.js"></script>
+		<script src="bloqueo_click_drcho.js"></script>
+		<br></br>
+		<!--Evitamos las opciones del boton derecho del raton con oncontextmenu="return false"-->
+		<div oncontextmenu="return false">
+			Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: 
+			
+		</div>
 	</body>
 </html> 
