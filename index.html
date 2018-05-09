@@ -76,5 +76,18 @@
 			Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Únete a ellos; toma menos de un minuto: 
 			
 		</div>
+		<script src="on_submit_parametros_url.js"></script>
+		<!--Lo ideal del tratamiento de datos en formaulario esque realicemos ciertos checkeos con js para liberar todo lo posible el servidor-->
+		<!--onsubmit-->
+		<br></br>
+		<div style="margin-top: 20px;margin-left: 500px;">
+			<form action="" onsubmit="return validar();">
+				<span >Nombre</span>
+				<input type="text" id='cNombre' name="cNombre"/>
+				<span >Apellido</span>
+				<input type="text" id='cApellido' name="cApellido"/>
+				<button type="submit">enviar datos</button>
+			</form>
+		</div>
 	</body>
 </html> 
