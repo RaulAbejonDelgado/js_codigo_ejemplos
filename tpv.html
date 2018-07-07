@@ -29,6 +29,11 @@ Total
 </p>
 
 <p><button onclick="Borrar()">Reset</button><button onclick="Imprimir()">ticket</button></p>
+<hr>
+<h1>Lectura Rusa</h1>
+<hr>
+<p><button onclick="alumnoRandom()">Alumno Random</button></p>
+<p id="resultado"></p>
 
 <script>
 //LOGICA TPV
@@ -93,6 +98,14 @@ Total
 	function limpiarHoras(){
 		document.getElementById('hora1').value = '';
 		document.getElementById('hora2').value = '';
+	}
+	//para el ejercicio de lectura rusa
+	function alumnoRandom(){
+		var alumnos = ['Raul','Luis Miguel','Adriana','Andrea','Asier','Joseba','Eneko','Valeria','Adrian','Carlos','Guillermo','Adrian','Sr.Burms','Alain','Ander'];
+		eleccionAleatoria = Math.floor( Math.random() * (alumnos.length ) );
+		console.log(eleccionAleatoria , alumnos[eleccionAleatoria]);
+		document.getElementById('resultado').innerHTML = alumnos[eleccionAleatoria];
+	
 	}
 	
 </script>
