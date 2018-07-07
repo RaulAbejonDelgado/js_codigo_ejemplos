@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+<title>TPV</title>
+</head>
+<body>
+<hr>
+<h1>Calcula la diferencia de tiempo</h1>
+<button onclick="Calcula()">Calcula</button>
+<hr>
+<h1>TPV</h1>
+<hr>
+<img id="cafe" onclick="eleccion(1, 'cafe')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/251px-A_small_cup_of_coffee.JPG">
+
+<img id="pintxo" onclick="eleccion(1.5, 'pintxo')" src="https://www.hogarmania.com/archivos/201610/tortilla-patatas-xl-848x477x80xX.jpg">
+
+<img id="desayuno" onclick="eleccion(2.2, 'desayuno')" src="https://images.clarin.com/2017/07/19/HJnSqAhSb_930x525.jpg">
+<p>
+Total
+	<p id="muestraTotal"></p>
+</p>
+
+<p><button onclick="Borrar()">Poner a 0</button><button onclick="Imprimir()">ticket</button></p>
+<script>
+//LOGICA TPV
+	var historico = '';
+	var producto = '';
+	var precio = 0 ;
+	var total = 0;
+
+	function Imprimir(){
+		var historicoTotal = historico + '\n' + 'Importe Total: ' + total + '€';
+		alert(historicoTotal)
+	}
+
+	function Borrar(){
+		this.historico = '';
+		this.producto = '';
+		this.precio = 0 ;
+		this.total = 0;
+		ele = document.getElementById('muestraTotal');
+		ele.innerHTML = 0;
+	}	
+
+	function eleccion(precio,producto){
+		console.log(precio);
+		console.log(producto);
+		total += precio;
+		historico += producto + ' : ' + precio + '€' + '\n';
+		console.log(historico);
+		console.log(total);
+		ele = document.getElementById('muestraTotal');
+		ele.innerHTML = total;
+	}
+//Para el ejercicion de las fechas
+	function Calcula(){
+		var ahora = Date();
+		var tope =  Date() + 1;
+		var x = ahora - tope;
+		console.log(ahora);
+		console.log(tope);
+		console.log(x);
+	}
+</script>
+<style>
+img{
+	width: 100px;
+	height: 100px;
+}
+</style>
+</body>
+</html>
