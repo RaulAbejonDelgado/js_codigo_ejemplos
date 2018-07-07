@@ -3,25 +3,33 @@
 <head>
  <meta charset="UTF-8">
 <title>TPV</title>
+<!--<script src="http://momentjs.com/downloads/moment.js"></script>-->
 </head>
-<body>
+<body >
 <hr>
 <h1>Calcula la diferencia de tiempo</h1>
+<hr>
+<input id="hora1"></input><input id="hora2"></input>
+<br></br>
+<button onclick="horaActual()">Hora actual</button>
+<button onclick="limpiarHoras()">Limpiar horas</button>
+<br></br>
 <button onclick="Calcula()">Calcula</button>
 <hr>
 <h1>TPV</h1>
 <hr>
-<img id="cafe" onclick="eleccion(1, 'cafe')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/251px-A_small_cup_of_coffee.JPG">
+<img id="cafe" onclick="Eleccion(1, 'cafe')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/251px-A_small_cup_of_coffee.JPG">
 
-<img id="pintxo" onclick="eleccion(1.5, 'pintxo')" src="https://www.hogarmania.com/archivos/201610/tortilla-patatas-xl-848x477x80xX.jpg">
+<img id="pintxo" onclick="Eleccion(1.5, 'pintxo')" src="https://www.hogarmania.com/archivos/201610/tortilla-patatas-xl-848x477x80xX.jpg">
 
-<img id="desayuno" onclick="eleccion(2.2, 'desayuno')" src="https://images.clarin.com/2017/07/19/HJnSqAhSb_930x525.jpg">
+<img id="desayuno" onclick="Eleccion(2.2, 'desayuno')" src="https://images.clarin.com/2017/07/19/HJnSqAhSb_930x525.jpg">
 <p>
 Total
 	<p id="muestraTotal"></p>
 </p>
 
-<p><button onclick="Borrar()">Poner a 0</button><button onclick="Imprimir()">ticket</button></p>
+<p><button onclick="Borrar()">Reset</button><button onclick="Imprimir()">ticket</button></p>
+
 <script>
 //LOGICA TPV
 	var historico = '';
@@ -43,7 +51,7 @@ Total
 		ele.innerHTML = 0;
 	}	
 
-	function eleccion(precio,producto){
+	function Eleccion(precio,producto){
 		console.log(precio);
 		console.log(producto);
 		total += precio;
@@ -53,20 +61,48 @@ Total
 		ele = document.getElementById('muestraTotal');
 		ele.innerHTML = total;
 	}
-//Para el ejercicion de las fechas
+//Para el ejercicio de las fechas
 	function Calcula(){
-		var ahora = Date();
-		var tope =  Date() + 1;
-		var x = ahora - tope;
-		console.log(ahora);
-		console.log(tope);
-		console.log(x);
+        var hora1 = document.getElementById('hora1');
+        var hora2 = document.getElementById('hora2');
+        hora1 = hora1.value.split(":"),
+        hora2 = hora2.value.split(":"),
+        t1 = new Date(),
+        t2 = new Date();
+
+	    t1.setHours(hora1[0], hora1[1], hora1[2]);
+	    t2.setHours(hora2[0], hora2[1], hora2[2]);
+	     
+	    //Aquí hago la resta
+	    t1.setHours(t1.getHours() - t2.getHours(), t1.getMinutes() - t2.getMinutes(), t1.getSeconds() - t2.getSeconds());
+	     
+	    //Imprimo el resultado
+	    var res = "La diferencia es de: " + (t1.getHours() ? t1.getHours() + (t1.getHours() > 1 ? " horas" : " hora") : "") + (t1.getMinutes() ? ", " + t1.getMinutes() + (t1.getMinutes() > 1 ? " minutos" : " minuto") : "") + (t1.getSeconds() ? (t1.getHours() || t1.getMinutes() ? " y " : "") + t1.getSeconds() + (t1.getSeconds() > 1 ? " segundos" : " segundo") : "");
+	    alert(res);
+		}
+
+	function horaActual(){
+		var hActual = new Date();
+		hActual = hActual.getHours() + ':' + hActual.getMinutes() + ':' + hActual.getMinutes();
+		console.log(hActual);
+		console.log(hora2.value);
+		//hora2.value.innerHTML = hActual ;
+		document.getElementById('hora2').value = hActual;
 	}
+
+	function limpiarHoras(){
+		document.getElementById('hora1').value = '';
+		document.getElementById('hora2').value = '';
+	}
+	
 </script>
 <style>
 img{
 	width: 100px;
 	height: 100px;
+}
+body{
+	text-align: center;
 }
 </style>
 </body>
